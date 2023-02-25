@@ -4,73 +4,24 @@ import { Link } from "react-router-dom"
 export const Navigator = styled.nav`
   display: flex;
   flex-direction: row;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 150px;
   justify-content: space-between;
   align-items: center;
-  background-color: transparent;
-  /* background: rgb(255, 255, 255);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0.0665616588432247) 100%
-  ); */
+  @media (max-width: 768px) {
+    padding-top: 20px;
+  }
 `
 
 export const IconContainer = styled.div`
-  height: 9vh;
-  height: 90px;
-  width: 100px;
-  margin-left: 1.5vw;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  grid-column: 1/2;
-
   display: flex;
-  justify-content: space-around;
 
-  border: 1px solid #d822fc3f;
+  border: none;
   border-radius: 12px;
-  background-color: #e2c8ff;
-  transition: background-color 1s;
-
-  &:hover {
-    background-color: #eea0fe;
-    transition: background-color 1s;
-  }
-  @media screen and (max-width: 1140px) {
-    height: 9vh;
-    height: 90px;
-    width: 100px;
-    margin-left: 1.5vw;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-  }
-  @media screen and (max-width: 900px) {
-    height: 9vh;
-    height: 70px;
-    width: 80px;
-    margin-left: 2vw;
-    margin-top: 2.5vh;
-    margin-bottom: 2.5vh;
-  }
-  @media screen and (max-width: 700px) {
-    height: 9vh;
-    height: 50px;
-    width: 70px;
-    margin-left: 2vw;
-    margin-top: 2.5vh;
-    margin-bottom: 2.5vh;
-  } ;
 `
 
 export const Logo = styled.img`
-  width: 80%;
-  margin-left: 10%;
-  height: 85%;
-  margin-top: 7.5%;
+  width: 60px;
+  height: 50px;
+
   background-repeat: no-repeat;
   background-size: contain;
 `
@@ -78,6 +29,9 @@ export const Logo = styled.img`
 export const ToHome = styled(Link)`
   text-decoration: none;
   width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 // @media screen and (max-width: 1140px) {
@@ -93,3 +47,21 @@ export const ToHome = styled(Link)`
 //   margin: 0;
 //   margin-top: 5%;
 // } ;
+
+export const DesktopNavigation = styled.article`
+  display: flex;
+  gap: 60px;
+  justify-content: space-between;
+  align-items: center;
+  height: 108px;
+  @media (max-width: 768px) {
+    display: none;
+  }
+  a {
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    :hover {
+      color: #e9e0e0;
+    }
+  }
+`

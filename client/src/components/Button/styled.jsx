@@ -1,56 +1,43 @@
 import styled from "styled-components"
 
-export const Container = styled.button`
+export const Container = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: right;
   align-items: center;
-  height: 20px;
-  width: 80px;
+  width: 110px;
   min-width: 80px;
   min-height: 40px;
-  margin-top: 1vh;
-  margin-left: 1vw;
-  padding: 4px;
+  border: none;
   z-index: 150;
-  margin-right: 20px;
+  border-radius: 20px;
+  padding: 3px 6px;
 
-  border: 1px solid #d822fc3f;
-  border-radius: 21px;
-  background: #e2c8ff;
+  gap: 10px;
   svg {
-    color: #000000;
+    color: #e9e0e0ee;
   }
   transition: all 1s;
   &:hover {
-    /* border-radius: 21px;
-    background: #be86ff; */
-    background-color: #eea0fe;
-    transition: background-color 1s;
+    svg {
+      color: #f0f0f0;
+    }
   }
-
-  &:active {
-    border-radius: 21px;
-    /* background: #be4eff;
-    box-shadow: inset 6px 6px 12px #8d3abd, inset -6px -6px 12px #ef62ff; */
-    background: #eea0fe;
-    box-shadow: inset 5px 5px 10px #d18de0, inset -5px -5px 10px #ffb3ff;
+  @media (min-width: 768px) {
+    display: none;
   }
 `
 
 export const Icon = styled.div`
-  color: black;
-  font-size: 3.5vh;
+  font-size: 30px;
   min-height: 20px;
   font-weight: 800;
-  margin-left: 0.3vw;
+  margin-left: 8px;
 `
 
 export const ImageContainer = styled.div`
   height: 40px;
   width: 40px;
-  margin-left: 2px;
-  color: black;
-  background-color: white;
+
   border-radius: 50px;
 `
 export const ProfileImage = styled.img`

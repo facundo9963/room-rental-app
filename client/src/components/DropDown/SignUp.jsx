@@ -47,7 +47,7 @@ const SignUp = () => {
     } else {
       dispatch(postNewUser(signUpForm))
       dispatch(loadUser())
-      navigate("/home")
+      navigate("/")
     }
 
     //function handleLogin() {
@@ -60,6 +60,7 @@ const SignUp = () => {
         <Field>
           <Label>Name: </Label>
           <Input
+            autoFocus
             type="text"
             name="name"
             value={signUpForm.name}

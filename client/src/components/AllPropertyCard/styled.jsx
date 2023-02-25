@@ -1,14 +1,16 @@
 import styled from "styled-components"
 
 export const Card = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 270px));
   width: 100%;
-  padding: 1rem;
-  margin-right: 1rem;
+  justify-content: flex-start;
   min-height: 500px;
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width:624px) {
+    display: flex;
     flex-direction: column;
+align-items: center;
+    
   }
+ 
 `

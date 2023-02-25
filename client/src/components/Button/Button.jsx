@@ -19,9 +19,6 @@ export default function Button() {
 
   return (
     <Container onClick={handleClick}>
-      <Icon>
-        <AiOutlineMenu />
-      </Icon>
       {user ? (
         <ImageContainer>
           <ProfileImage src={user && user.picture} />
@@ -32,6 +29,9 @@ export default function Button() {
         </ImageContainer>
       ) : null}
       {open && <DropDown open={open} />}
+      <Icon>
+        <AiOutlineMenu />
+      </Icon>
     </Container>
   )
 }

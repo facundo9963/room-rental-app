@@ -10,12 +10,6 @@ import {
   FormSelect,
   FormLabel,
   SubmitButton,
-  PaymentMethodsContainer,
-  PaymentMethod,
-  PaymentMethodCheck,
-  PaymentMethodName,
-  AddPayment,
-  IconPlus,
 } from "./styled"
 
 import { DayPicker } from "react-day-picker"
@@ -137,10 +131,11 @@ export default function RentForm(props) {
   return (
     <Container>
       <Header>
-        <Price>{props.price ? props.price : "185"}$</Price>
+        <Price>{props.price ? `${props.price} $` : ""}</Price>
         <Stars>
           <IconStar />
           {props.rating}
+          {props.rating % 1 === 0 ? ".0" : null}
         </Stars>
       </Header>
       <Form>
@@ -195,17 +190,24 @@ export default function RentForm(props) {
                 today: styles.today,
               }}
             />
-            {restaFechas(dates?.from, dates?.to) >= 1 ? (
-              <h3 className={styles.Total}>
-                El total es: {restaFechas(dates?.from, dates?.to) * props.price}
-                $
-              </h3>
-            ) : (
-              ""
-            )}
+            <div
+              style={{
+                minHeight: "100px",
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+                background: "transparent",
+              }}>
+              {restaFechas(dates?.from, dates?.to) >= 1 && (
+                <h3 className={styles.Total}>
+                  El total es:{" "}
+                  {restaFechas(dates?.from, dates?.to) * props.price}$
+                </h3>
+              )}
+            </div>
           </div>
         </FormField>
-        <PaymentMethodsContainer>
+        {/*     <PaymentMethodsContainer>
           {paymentMethods ? (
             paymentMethods.map(method => {
               // console.log(method)
@@ -233,7 +235,7 @@ export default function RentForm(props) {
           <AddPayment to="/profile/payment-methods">
             Add payment method <IconPlus />
           </AddPayment>
-        </PaymentMethodsContainer>
+        </PaymentMethodsContainer> */}
         <SubmitButton
           disabled={
             !dates?.from || !dates?.to
